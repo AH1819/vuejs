@@ -24,7 +24,9 @@
 </template>
 <script>
 import axios from "axios";
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
     data() {
         return {
             aapl: [],
@@ -66,5 +68,5 @@ export default {
             console.log(error);
         });
     }
-};
+});
 </script>

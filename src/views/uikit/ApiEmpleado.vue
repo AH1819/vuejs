@@ -1,6 +1,6 @@
 <template>
     <div class="grid">
-        <div class="col-12">
+        <div class="col-12 md:col-6">
             <div class="card">
                 <h5>Consumir API REST Empleado</h5>
                 <div class="p-fluid formgrid grid">
@@ -21,7 +21,7 @@
                         <label for="number-input">ID Empleado</label>
                         <InputNumber id="number-input" v-model="id_emp" />
                     </div>
-                    <div class="field col-12 md:col-6 ">
+                    <div class="field col-12">
                         <Button label="Consultar Datos" class="p-button-success mr-2 mb-2" icon="pi pi-search"
                             @click="Consultar()" v-tooltip="'Click al presionar'"></Button>
                     </div>
@@ -29,8 +29,7 @@
             </div>
         </div>
     </div>
-
-
+    <Toast/>
     <div class="grid">
         <div class="col-12">
             <div class="card">
@@ -46,11 +45,12 @@
             </div>
         </div>
     </div>
+
 </template>
 <script>
 import axios from "axios";
-
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent ({
     data() {
         return {
             empleados: [],
@@ -77,7 +77,7 @@ export default {
         Consultar() {
 
             if (this.id_emp === null) {
-                alert(this.message);
+                this.$toast.add({severity:'error', summary: 'Error al buscar', detail: 'No has Ingresado su ID del empleado', life: 5000});
 
             } else {
                 axios.get(`https://dummy.restapiexample.com/api/v1/employee/${this.id_emp}`, {
@@ -96,5 +96,5 @@ export default {
 
         }
     }
-};
+});
 </script>
