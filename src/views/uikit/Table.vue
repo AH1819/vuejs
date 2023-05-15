@@ -6,10 +6,18 @@
                 <di class="col-12">
                     <div class="card">
                         <div class="flex justify-content-between flex-column sm:flex-row">
-                            <InputText v-model="nombreProd" type="text" placeholder="Nombre del Producto..." />
-                            <InputNumber v-model="cantidad" placeholder="Cantidad" />
-                            <InputNumber v-model="preciosU" :minFractionDigits="2" :maxFractionDigits="5"
-                                placeholder="$ Precio U." />
+                            <span class="p-float-label">
+                            <InputText id="Producto" v-model="nombreProd" type="text"/>
+                            <label for="Producto">Nombre del Producto:</label>
+                            </span>
+                            <span class="p-float-label">
+                                <InputText id="Cantidad" type="text" v-model="cantidad" />
+                                <label for="Cantidad">Cantidad</label>
+                            </span>
+                            <span class="p-float-label">
+                                <InputText id="Precio" type="text" v-model="preciosU"/>
+                                <label for="Precio">$ Precio U.</label>
+                            </span>
                             <br>
                             <Button type="button" icon="pi pi-plus" label="Registrar" severity="success"
                                 @Click="RegistrarV" />

@@ -3,11 +3,10 @@
         <div class="col-12">
             <div class="card">
                 <h5>Api de datos históricos del mercado de valores de Lyon, Francia</h5>
-                <Chart type="line" :data="chartData" :options="options" class="h-30rem"></Chart>
+                <Chart type="line" :data="chartData" :options="options" class="h-40rem"></Chart>
             </div>
-
         </div>
-        <div class="grid">
+        <div class="grid col-12">
             <div class="col-12">
                 <div class="card">
                     <h5>Cambio porcentual por dia de acciones AAPL (2017-01-05 / 2017-02-05)</h5>
