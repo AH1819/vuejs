@@ -24,6 +24,12 @@ const router = createRouter({
                     component: () => import('@/views/uikit/ApiEmpleado.vue')
                 },
                 {
+                    path: '/uikit/barcodeQR',
+                    name: 'CodeQR',
+                    component: () => import('@/views/uikit/BarCode-QR.vue')
+
+                },
+                {
                     path: '/uikit/input',
                     name: 'input',
                     component: () => import('@/views/uikit/Input.vue')
